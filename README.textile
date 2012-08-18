@@ -1,0 +1,22 @@
+h1. rah_pathway
+
+p. Allows defining any "Textpattern":http://textpattern.com article any type of permanent link. This URL can contain false sub-sections, forward slashes -- literally anything.
+
+h2. Basics
+
+p. Todo
+
+h2. Requirements
+
+Rah_sitemap's minimum requirements:
+
+* Textpattern v4.5 or newer.
+* PHP 5.2 or newer.
+
+h2. Installing
+
+p. Todo
+
+h2. Preferences
+
+p. Todo

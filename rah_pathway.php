@@ -30,10 +30,10 @@ class rah_pathway {
 	private $page_uri;
 	
 	/**
-	 * @var mixed Real ID
+	 * @var array URL of the real URL params
 	 */
 	
-	private $id;
+	private $makeout;
 
 	/**
 	 * Constructor
@@ -60,8 +60,15 @@ class rah_pathway {
 	
 	public function route() {
 	
-		if(isset($_GET['id'])) {
-			$this->id = $_GET['id'];
+		foreach(array('id') as $name) {
+			
+			if(isset($_GET[$name])) {
+				$this->makeout[$name] = $_GET[$name];
+			}
+			
+			else {
+				$this->makeout[$name] = null;
+			}
 		}
 	
 		if(!$this->page_uri) {
@@ -87,13 +94,15 @@ class rah_pathway {
 	 */
 	
 	public function sweep() {
-		
-		if($this->id === null) {
-			unset($_GET['id']);
-		}
-		
-		else {
-			$_GET['id'] = $this->id;
+		foreach($this->makeout as $name => $value) {
+			
+			if($value === null) {
+				unset($_GET[$name]);
+			}
+			
+			else {
+				$_GET[$name] = $value;
+			}
 		}
 	}
 	

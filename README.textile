@@ -8,8 +8,6 @@ p. Todo
 
 h2. Requirements
 
-Rah_sitemap's minimum requirements:
-
 * Textpattern v4.5 or newer.
 * PHP 5.2 or newer.
 

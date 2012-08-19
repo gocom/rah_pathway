@@ -62,7 +62,11 @@ class rah_pathway {
 	
 		foreach(array('id') as $name) {
 			
-			if(isset($_GET[$name])) {
+			if(isset($_POST[$name])) {
+				$this->makeout[$name] = $_POST[$name];
+			}
+			
+			else if(isset($_GET[$name])) {
 				$this->makeout[$name] = $_GET[$name];
 			}
 			
@@ -86,22 +90,22 @@ class rah_pathway {
 			return;
 		}
 		
-		$_GET['id'] = $id;
+		$_POST['id'] = $_GET['id'] = $id;
 	}
 	
 	/**
-	 * Sweet modifications from memory
+	 * Sweet modifications from the memory
 	 */
 	
 	public function sweep() {
 		foreach($this->makeout as $name => $value) {
 			
 			if($value === null) {
-				unset($_GET[$name]);
+				unset($_GET[$name], $_POST[$name]);
 			}
 			
 			else {
-				$_GET[$name] = $value;
+				$_POST[$name] = $_GET[$name] = $value;
 			}
 		}
 	}

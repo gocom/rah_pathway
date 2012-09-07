@@ -123,7 +123,7 @@ class rah_pathway {
 	 * Sanitizer, allow free URLs
 	 */
 	
-	public function sanitize_url($ent, $step, $pre, $url) {
+	public function sanitize_url($ent, $step, $url) {
 		global $event;
 		
 		if($this->field === 'url_title' && $event === 'article') {

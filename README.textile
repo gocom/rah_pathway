@@ -1,6 +1,6 @@
 h1. rah_pathway
 
-"Issues":https://github.com/gocom/rah_pathway/issues
+"Packagist":https://packagist.org/packages/rah/rah_pathway | "Issues":https://github.com/gocom/rah_pathway/issues
 
 Custom free-form article permlinks for "Textpattern CMS":https://textpattern.com. These URLs can contain false sub-sections, forward slashes -- literally anything.
 

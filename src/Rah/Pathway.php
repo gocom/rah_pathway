@@ -41,11 +41,11 @@ final class Rah_Pathway
     private $pageUrl;
 
     /**
-     * URL of the real URL params.
+     * Stores an array of the real request parameters.
      *
      * @var array
      */
-    private $makeout;
+    private $stash = [];
 
     /**
      * Permlink cache.
@@ -63,7 +63,7 @@ final class Rah_Pathway
 
         register_callback([$this, 'route'], 'pretext');
         register_callback([$this, 'setPermlink'], 'pretext_end');
-        register_callback([$this, 'sweep'], 'pretext_end');
+        register_callback([$this, 'restore'], 'pretext_end');
         register_callback([$this, 'sanitizer'], 'sanitize_for_url');
 
         if (txpinterface == 'admin') {
@@ -79,11 +79,11 @@ final class Rah_Pathway
     {
         foreach (['id'] as $name) {
             if (isset($_POST[$name])) {
-                $this->makeout[$name] = $_POST[$name];
+                $this->stash[$name] = $_POST[$name];
             } elseif (isset($_GET[$name])) {
-                $this->makeout[$name] = $_GET[$name];
+                $this->stash[$name] = $_GET[$name];
             } else {
-                $this->makeout[$name] = null;
+                $this->stash[$name] = null;
             }
         }
 
@@ -103,9 +103,9 @@ final class Rah_Pathway
     /**
      * Restores GET and POST parameters.
      */
-    public function sweep()
+    public function restore()
     {
-        foreach ($this->makeout as $name => $value) {
+        foreach ($this->stash as $name => $value) {
             if ($value === null) {
                 unset($_GET[$name], $_POST[$name]);
             } else {

@@ -1,0 +1,15 @@
+{
+    "name": "rah_pathway",
+    "description": "Custom article permlinks",
+    "version": "0.1.0",
+    "type": 5,
+    "author": "Jukka Svahn",
+    "author_uri": "https://github.com/gocom/rah_pathway",
+    "order": 5,
+    "flags": 0,
+    "help": {"file" : ["./README.textile"]},
+    "code": {"file" : [
+        "./src/Rah/Pathway.php",
+        "./src/Index.php"
+    ]}
+}

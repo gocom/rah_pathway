@@ -1,0 +1,30 @@
+{
+    "name": "rah/rah_pathway",
+    "description": "Custom article parmlinks for Textpattern CMS",
+    "keywords": ["textpattern", "plugin"],
+    "homepage": "https://github.com/gocom/rah_pathway",
+    "license": "GPL-2.0",
+    "type": "textpattern-plugin",
+    "authors": [
+        {
+            "name": "Jukka Svahn",
+            "homepage": "https://github.com/gocom",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/gocom/rah_pathway/issues",
+        "source": "https://github.com/gocom/rah_pathway"
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "textpattern/lock": ">=4.7.0",
+        "textpattern/installer": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "scripts": {
+        "cs": "./vendor/bin/phpcs"
+    }
+}

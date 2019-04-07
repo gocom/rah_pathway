@@ -1,20 +1,17 @@
 h1. rah_pathway
 
-p. Allows defining any "Textpattern":http://textpattern.com article any type of permanent link. This URL can contain false sub-sections, forward slashes -- literally anything.
+"Issues":https://github.com/gocom/rah_pathway/issues
 
-h2. Basics
+Custom free-form article permlinks for "Textpattern CMS":https://textpattern.com. These URLs can contain false sub-sections, forward slashes -- literally anything.
 
-p. Todo
+h2. Install
 
-h2. Requirements
+Using "Composer":https://getcomposer.org:
 
-* Textpattern v4.5 or newer.
-* PHP 5.2 or newer.
+bc. $ composer require rah/rah_pathway
 
-h2. Installing
+h2. Changelog
 
-p. Todo
+h3. Version 0.1.0 - upcoming
 
-h2. Preferences
-
-p. Todo
+* Initial release.

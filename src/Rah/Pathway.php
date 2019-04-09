@@ -63,7 +63,7 @@ final class Rah_Pathway
         register_callback([$this, 'uninstall'], 'plugin_lifecycle.rah_pathway', 'deleted');
 
         try {
-            $this->setField(get_pref('rah_pathway_input'));
+            $this->setField(get_pref('rah_pathway_field'));
         } catch (\Exception $e) {
             return;
         }
@@ -86,7 +86,7 @@ final class Rah_Pathway
      */
     public function install()
     {
-        create_pref('rah_pathway_input', '', 'site', PREF_PLUGIN, 'Rah_Pathway::renderFieldOption', 181);
+        create_pref('rah_pathway_field', '', 'site', PREF_PLUGIN, 'Rah_Pathway::renderFieldOption', 181);
     }
 
     /**
@@ -94,12 +94,13 @@ final class Rah_Pathway
      */
     public function uninstall()
     {
-        remove_pref('rah_pathway_input');
+        remove_pref('rah_pathway_field');
     }
 
     /**
      * Sets the used field.
      *
+     * @param  string $column Column name
      * @return $this
      */
     private function setField($column)

@@ -232,11 +232,15 @@ final class Rah_Pathway
      */
     public static function renderFieldOption($name, $selected)
     {
-        $options = [];
+        $options = [
+            'url_title' => gTxt('url_title'),
+        ];
 
         foreach (getCustomFields() as $number => $label) {
-            $options['custom_' . intval($number)] = $label;
+            $options['custom_' . intval($number)] = gTxt($label);
         }
+
+        asort($options);
 
         return selectInput($name, $options, $selected, '', '', $name);
     }

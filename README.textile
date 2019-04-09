@@ -16,6 +16,6 @@ In Preferences, under *Site* section, *Free-form article URL field* option contr
 
 h2. Changelog
 
-h3. Version 0.1.0 - upcoming
+h3. Version 0.1.0 - 2019/04/09
 
 * Initial release.

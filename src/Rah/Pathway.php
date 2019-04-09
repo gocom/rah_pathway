@@ -31,7 +31,7 @@ final class Rah_Pathway
      *
      * @var string
      */
-    private $field = 'custom_7';
+    private $field;
 
     /**
      * Requested URL.
@@ -59,6 +59,15 @@ final class Rah_Pathway
      */
     public function __construct()
     {
+        register_callback([$this, 'install'], 'plugin_lifecycle.rah_pathway', 'installed');
+        register_callback([$this, 'uninstall'], 'plugin_lifecycle.rah_pathway', 'deleted');
+
+        try {
+            $this->setField(get_pref('rah_pathway_input'));
+        } catch (\Exception $e) {
+            return;
+        }
+
         $this->pageUrl = trim(serverSet('REQUEST_URI'), '/');
 
         register_callback([$this, 'route'], 'pretext');
@@ -70,6 +79,40 @@ final class Rah_Pathway
             global $event;
             register_callback([$this, 'setPermlink'], $event, '', 1);
         }
+    }
+
+    /**
+     * Installer.
+     */
+    public function install()
+    {
+        create_pref('rah_pathway_input', '', 'site', PREF_PLUGIN, 'Rah_Pathway::renderFieldOption', 181);
+    }
+
+    /**
+     * Uninstaller.
+     */
+    public function uninstall()
+    {
+        remove_pref('rah_pathway_input');
+    }
+
+    /**
+     * Sets the used field.
+     *
+     * @return $this
+     */
+    private function setField($column)
+    {
+        $field = preg_replace('/[^a-z0-9_]/i', '', $column);
+
+        if (!$field) {
+            throw new \InvalidArgumentException('Invalid field name.');
+        }
+
+        $this->field = $field;
+
+        return $this;
     }
 
     /**
@@ -177,5 +220,23 @@ final class Rah_Pathway
         $this->permlinks[$id] = $url;
 
         return $url;
+    }
+
+    /**
+     * Renders input.
+     *
+     * @param  string $name      Field name
+     * @param  string $selected  Current value
+     * @return string HTML select field
+     */
+    public static function renderFieldOption($name, $selected)
+    {
+        $options = [];
+
+        foreach (getCustomFields() as $number => $label) {
+            $options['custom_' . intval($number)] = $label;
+        }
+
+        return selectInput($name, $options, $selected, '', '', $name);
     }
 }

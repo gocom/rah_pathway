@@ -2,13 +2,17 @@ h1. rah_pathway
 
 "Packagist":https://packagist.org/packages/rah/rah_pathway | "Issues":https://github.com/gocom/rah_pathway/issues
 
-Custom free-form article permlinks for "Textpattern CMS":https://textpattern.com. These URLs can contain false sub-sections, forward slashes -- literally anything.
+Custom free-form article permalinks for "Textpattern CMS":https://textpattern.com. These URLs can contain false sub-sections, forward slashes -- literally anything.
 
 h2. Install
 
 Using "Composer":https://getcomposer.org:
 
 bc. $ composer require rah/rah_pathway
+
+h2. Configure
+
+In Preferences, under *Site* section, *Free-form article URL field* option controls which field is going to be used for the free-form article URL. The assigned field's contents are going to be used as the article URL as-is.
 
 h2. Changelog
 

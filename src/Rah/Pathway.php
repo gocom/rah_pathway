@@ -242,6 +242,6 @@ final class Rah_Pathway
 
         asort($options);
 
-        return selectInput($name, $options, $selected, '', '', $name);
+        return selectInput($name, $options, $selected, true, '', $name);
     }
 }

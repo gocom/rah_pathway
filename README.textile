@@ -1,6 +1,6 @@
 h1. rah_pathway
 
-"Packagist":https://packagist.org/packages/rah/rah_pathway | "Issues":https://github.com/gocom/rah_pathway/issues
+"Download":https://github.com/gocom/rah_pathway/releases | "Packagist":https://packagist.org/packages/rah/rah_pathway | "Issues":https://github.com/gocom/rah_pathway/issues
 
 Custom free-form article permalinks for "Textpattern CMS":https://textpattern.com. These URLs can contain false sub-sections, forward slashes -- literally anything.
 
@@ -9,6 +9,8 @@ h2. Install
 Using "Composer":https://getcomposer.org:
 
 bc. $ composer require rah/rah_pathway
+
+Or "download":https://github.com/gocom/rah_pathway/releases an installer.
 
 h2. Configure
 

@@ -20,7 +20,7 @@ h2. Usage
 
 After you have configured a field to be used as the free-form article URL, you can use it to set any form of URL for articles. Please note that Textpattern and the server must be configured to use clean URLs for this to work.
 
-The URL given to the field can be anything. If you give it `this/is/a/custom/permlink` as the value, then the article can be found at `https://site.tld/this/is/a/custom/permlink`, where `https://site.tld/` is your site's address.
+The URL given to the field can be anything. If you give it @this/is/a/custom/permlink@ as the value, then the article can be found at @https://site.tld/this/is/a/custom/permlink@, where @https://site.tld/@ is your site's address.
 
 h2. Changelog
 
